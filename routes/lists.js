@@ -8,8 +8,9 @@ module.exports = function (app) {
   }));
 
   app.use(route.post('/lists', function *() {
-    var list = new List();
-    this.body = yield list.save();
+    delete this.request.body.id;
+    delete this.request.body._id;
+    this.body = yield new List(this.request.body).save();
   }));
 
   app.use(route.get('/lists/:id', function *(id) {

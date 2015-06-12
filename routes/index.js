@@ -16,6 +16,8 @@ module.exports = function(app) {
     }
   });
 
+  app.use(require('koa-body')());
+
   [ './lists', './comparisons' ].forEach(function(file) {
     require(file)(app);
   });
