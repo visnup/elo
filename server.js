@@ -3,6 +3,8 @@ const app = koa();
 
 // Logging
 app.use(require('koa-logger')());
+app.use(require('koa-conditional-get')());
+app.use(require('koa-etag')());
 
 // Models
 
