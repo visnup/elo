@@ -8,7 +8,7 @@ elo rank any list
   - see randomly ordered
   - see ranked
 - GET /lists/:id/comparisons/new
-- PUT /lists/:id/comparisons
+- POST /lists/:id/comparisons
   - rank list
 - authentication
   - groups, orgs

@@ -7,9 +7,13 @@
   },
   "main": "server.js",
   "dependencies": {
-    "koa": "^0.21.0"
+    "koa": "^0.21.0",
+    "koa-logger": "^1.2.2",
+    "koa-route": "^2.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-dev": "^2.6.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

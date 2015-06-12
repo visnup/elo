@@ -1,8 +1,38 @@
 const koa = require('koa');
 const app = koa();
 
-app.use(function *(){
-  this.body = 'Hello World';
+// Logging
+app.use(require('koa-logger')());
+
+// Models
+
+// Routes
+const route = require('koa-route');
+
+app.use(function *(next) {
+  switch (this.accepts('json', 'html')) {
+    case 'json':
+      yield next;
+      break;
+    case 'html':
+      this.body = 'Hello world';
+      break;
+    default:
+      this.throw(406);
+  }
 });
+
+app.use(route.post('/lists', function *() {
+}));
+
+app.use(route.get('/lists', function *() {
+  this.body = [];
+}));
+
+app.use(route.get('/lists/:id', function *() {
+}));
+
+app.use(route.post('/lists/:id/comparisons', function *() {
+}));
 
 app.listen(process.env.PORT || 3000);
