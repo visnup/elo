@@ -19,11 +19,11 @@ elo rank any list
   - lists
     - name
     - description (markdown)
-  - items
-    - list-id
-    - name
-    - description (markdown)
-    - score
+    - items
+      - list-id
+      - name
+      - description (markdown)
+      - score
   - comparisons
     - list-id?
     - win-id
