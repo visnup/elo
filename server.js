@@ -9,24 +9,26 @@ app.use(require('koa-logger')());
 // Routes
 const route = require('koa-route');
 
+app.use(require('koa-views')({ default: 'jade' }));
+
 app.use(function *(next) {
   switch (this.accepts('json', 'html')) {
     case 'json':
       yield next;
       break;
     case 'html':
-      this.body = 'Hello world';
+      yield this.render('index');
       break;
     default:
       this.throw(406);
   }
 });
 
-app.use(route.post('/lists', function *() {
-}));
-
 app.use(route.get('/lists', function *() {
   this.body = [];
+}));
+
+app.use(route.post('/lists', function *() {
 }));
 
 app.use(route.get('/lists/:id', function *() {
