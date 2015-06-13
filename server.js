@@ -6,6 +6,7 @@ const app = koa();
 require('./models');
 
 // Middleware
+app.use(require('koa-compress')());
 app.use(require('koa-conditional-get')());
 app.use(require('koa-etag')());
 app.use(require('koa-static-cache')(path.join(__dirname, 'public'), {
