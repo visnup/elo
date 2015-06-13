@@ -11,9 +11,7 @@ const App = React.createClass({
     return (
       <div>
         <Header />
-        <main>
-          {this.props.children}
-        </main>
+        <main>{this.props.children || "Sign in"}</main>
       </div>
     );
   }
