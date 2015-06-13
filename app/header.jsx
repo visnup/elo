@@ -4,10 +4,14 @@ import { Link } from 'react-router';
 export default React.createClass({
   render: function() {
     return (
-      <header>
-        <h1>elo there</h1>
-        <Link to='lists'>lists</Link>
-      </header>
+      <nav>
+        <div className="nav-wrapper container">
+          <Link to='/' className="brand-logo">elo</Link>
+          <ul className="right hide-on-med-and-down">
+            <li><Link to='lists'>Lists</Link></li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 });

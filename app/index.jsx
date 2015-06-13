@@ -2,9 +2,10 @@ import React from 'react';
 import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
-import * as normalize from 'normalize.css';
+import * as materialize from 'materialize-css/bin/materialize.css';
 
 import Header from './header';
+import Start from './start';
 import List from './list';
 import Lists from './lists';
 
@@ -13,7 +14,7 @@ const App = React.createClass({
     return (
       <div>
         <Header />
-        <main>{this.props.children || "Sign in"}</main>
+        {this.props.children || <Start />}
       </div>
     );
   }

@@ -13,10 +13,11 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="container">
+        <h1>Lists</h1>
         <ul>{
           this.state.lists.map(list =>
-            <li><Link to={`/lists/${list._id}`}>{list.name}</Link></li>
+            <li key={list._id}><Link to={`/lists/${list._id}`}>{list.name}</Link></li>
           )
         }</ul>
         {this.props.children}

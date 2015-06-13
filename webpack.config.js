@@ -15,7 +15,9 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.css$/, loader: 'style!css' }
+      { test: /\.css$/, loader: 'style!css' },
+      { test: /\.(woff2?|ttf|eot)$/, loader: 'url' },
+      { test: /\.svg$/, loader: 'url' }
     ]
   },
 
