@@ -8,8 +8,8 @@ require('./models');
 // Middleware
 app.use(require('koa-conditional-get')());
 app.use(require('koa-etag')());
-app.use(require('koa-static')(path.resolve(__dirname, 'public'), {
-  maxage: 31536000  // 1y
+app.use(require('koa-static-cache')(path.join(__dirname, 'public'), {
+  maxAge: 365 * 24 * 60 * 60  // 1y
 }));
 app.use(require('koa-logger')());
 
