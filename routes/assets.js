@@ -2,7 +2,7 @@ const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
   module.exports = require('../public/manifest.json').map(function(asset) {
-    return '/' + asset.name;
+    return '/' + asset;
   });
 } else {
   const compiler = require('webpack')(require('../webpack.config.js'));
