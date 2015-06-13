@@ -1,23 +1,37 @@
 import React from 'react';
-import Ajax from 'react-ajax';
-import { json } from 'd3';
+import History from 'react-router/lib/BrowserHistory';
+import { Router, Route, Link } from 'react-router';
 
-var App = React.createClass({
-  getInitialState: function() {
-    return { lists: [] };
-  },
+import Header from './header';
+import List from './list';
+import Lists from './lists';
 
-  componentDidMount: function() {
-    json('/lists', lists => this.setState({ lists: lists }));
-  },
-
+const App = React.createClass({
   render: function() {
     return (
-      <ul>{
-        this.state.lists.map(list => <li><a href="">{list.name}</a></li>)
-      }</ul>
+      <div>
+        <Header />
+        <main>
+          {this.props.children}
+        </main>
+      </div>
     );
   }
 });
 
-React.render(<App />, document.querySelector('main'));
+const NoMatch = React.createClass({
+  render: function() {
+    return <h1>404</h1>;
+  }
+});
+
+React.render(
+  <Router history={History}>
+    <Route path="/" component={App}>
+      <Route path="lists" component={Lists} />
+      <Route path="lists/:id" component={List} />
+      <Route path="*" component={NoMatch} />
+    </Route>
+  </Router>,
+  document.body
+);

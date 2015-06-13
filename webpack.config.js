@@ -1,27 +1,30 @@
 const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
+
+  devtool: 'source-map',
+
   entry: './app',
+
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: process.env.NODE_ENV === 'production' ?
-      '[name]-[hash].js' : '[name].js'
+    filename: isProduction ? '[name]-[hash].js' : '[name].js'
   },
+
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
-      }
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' }
     ]
   },
+
   resolve: {
     extensions: [ '', '.js', '.jsx' ]
   },
+
   plugins: [
     function() {
-      if (process.env.NODE_ENV === 'production')
+      if (isProduction)
         this.plugin('done', function(stats) {
           const assets = Object.keys(stats.compilation.assets);
           const manifest = path.join(__dirname, 'public', 'manifest.json');
@@ -29,4 +32,5 @@ module.exports = {
         });
     }
   ]
+
 };
