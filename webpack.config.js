@@ -15,5 +15,15 @@ module.exports = {
         loader: 'babel'
       }
     ]
-  }
+  },
+  plugins: [
+    function() {
+      if (process.env.NODE_ENV === 'production')
+        this.plugin('done', function(stats) {
+          const assets = Object.keys(stats.compilation.assets);
+          const manifest = path.join(__dirname, 'public', 'manifest.json');
+          require('fs').writeFileSync(manifest, JSON.stringify(assets));
+        });
+    }
+  ]
 };
