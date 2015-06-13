@@ -14,6 +14,7 @@
     "koa-etag": "^2.0.0",
     "koa-logger": "^1.2.2",
     "koa-route": "^2.4.1",
+    "koa-static": "^1.4.9",
     "koa-views": "^3.0.0",
     "mongoose": "^4.0.5",
     "node-libs-browser": "^0.5.2",
@@ -24,6 +25,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
+    "post-install": "webpack --json > public/webpack.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

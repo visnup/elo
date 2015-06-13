@@ -1,13 +1,15 @@
+const path = require('path');
 const koa = require('koa');
 const app = koa();
 
-// Middleware
-app.use(require('koa-logger')());
-app.use(require('koa-conditional-get')());
-app.use(require('koa-etag')());
-
 // Models
 require('./models');
+
+// Middleware
+app.use(require('koa-conditional-get')());
+app.use(require('koa-etag')());
+app.use(require('koa-static')(path.resolve(__dirname, 'public')));
+app.use(require('koa-logger')());
 
 // Routes
 require('./routes')(app);

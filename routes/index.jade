@@ -5,4 +5,5 @@ html
   body
     header: h1 elo world
     main( ng-app='elo' )
-    script( src='bundle.js' )
+    each asset in webpack.assets
+      script( src=asset.name )
