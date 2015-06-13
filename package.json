@@ -25,7 +25,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "post-install": "webpack --json > public/webpack.json",
+    "postinstall": "webpack --json > public/webpack.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
