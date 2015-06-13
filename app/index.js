@@ -1,2 +1,3 @@
-import { map } from 'lodash';
-console.log('hello there', map);
+import * as angular from 'angular';
+
+angular.module('elo', []);
