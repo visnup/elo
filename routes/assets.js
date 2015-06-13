@@ -1,9 +1,7 @@
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('../public/manifest.json').map(function(asset) {
-    return '/' + asset;
-  });
+  module.exports = require('../public/manifest.json').map(asset => '/' + asset);
 } else {
   const compiler = require('webpack')(require('../webpack.config.js'));
   const Server = require('webpack-dev-server');

@@ -16,6 +16,9 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [ '', '.js', '.jsx' ]
+  },
   plugins: [
     function() {
       if (process.env.NODE_ENV === 'production')
