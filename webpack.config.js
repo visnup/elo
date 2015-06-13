@@ -4,6 +4,7 @@ module.exports = {
   entry: './app',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: process.env.NODE_ENV === 'production' ? 'bundle-[hash].js' : 'bundle.js'
+    filename: process.env.NODE_ENV === 'production' ?
+      '[name]-[hash].js' : '[name].js'
   }
 };
