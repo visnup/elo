@@ -2,6 +2,8 @@ import React from 'react';
 import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
+import * as normalize from 'normalize.css';
+
 import Header from './header';
 import List from './list';
 import Lists from './lists';
