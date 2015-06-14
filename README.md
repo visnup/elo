@@ -31,15 +31,7 @@ elo rank any list
     - created-at
 
 - es6
-  - let statement
-  - const statement
-  - Map and Set
-  - WeakMap and WeakSet
-  - Generators
-  - Binary and Octal literals
-  - Promises
-  - Some additional string methods
-  - Symbols
-  - Template strings
+- webpack
 - react? angular 2?
+- html-webpack-plugin
 - slack

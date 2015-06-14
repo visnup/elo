@@ -4,16 +4,16 @@ import { Router, Route, Link } from 'react-router';
 
 import * as materialize from 'materialize-css/bin/materialize.css';
 
-import Header from './header';
+import Nav from './nav';
 import Start from './start';
 import List from './list';
-import Lists from './lists';
+import ListForm from './list-form';
 
 const App = React.createClass({
-  render: function() {
+  render() {
     return (
       <div>
-        <Header />
+        <Nav />
         {this.props.children || <Start />}
       </div>
     );
@@ -21,7 +21,7 @@ const App = React.createClass({
 });
 
 const NoMatch = React.createClass({
-  render: function() {
+  render() {
     return <h1>404</h1>;
   }
 });
@@ -29,7 +29,7 @@ const NoMatch = React.createClass({
 React.render(
   <Router history={History}>
     <Route path="/" component={App}>
-      <Route path="lists" component={Lists} />
+      //<Route path="lists/new" component={ListForm} />
       <Route path="lists/:id" component={List} />
       <Route path="*" component={NoMatch} />
     </Route>
