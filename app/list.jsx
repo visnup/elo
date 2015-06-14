@@ -6,8 +6,16 @@ export default React.createClass({
     return {};
   },
 
+  getStateFromStore(props) {
+    json(`/lists/${props.params.id}`, list => this.setState(list));
+  },
+
   componentDidMount() {
-    json(`/lists/${this.props.params.id}`, list => this.setState(list));
+    this.getStateFromStore(this.props);
+  },
+
+  componentWillReceiveProps(props) {
+    this.getStateFromStore(props);
   },
 
   render() {
