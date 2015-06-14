@@ -3,6 +3,7 @@ import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
 import * as bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import * as theme from 'bootstrap/dist/css/bootstrap-theme.css';
 
 import Nav from './nav';
 import Start from './start';

@@ -18,7 +18,9 @@ export default React.createClass({
         <CollapsibleNav>
           <Nav navbar right>
             {this.state.lists.map(list =>
-              <li><Link to={`/lists/${list._id}`}>{list.name}</Link></li>
+              <li key={list._id}>
+                <Link to={`/lists/${list._id}`}>{list.name}</Link>
+              </li>
             )}
             <li><Link to='/lists/new'><Glyphicon glyph="plus" /></Link></li>
           </Nav>
