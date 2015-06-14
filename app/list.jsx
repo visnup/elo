@@ -20,10 +20,10 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="container">
+      <Container>
         <h1>{this.state.name}</h1>
         {this.state.description}
-      </div>
+      </Container>
     );
   }
 });

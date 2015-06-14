@@ -3,6 +3,7 @@ import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
 import * as materialize from 'materialize-css/bin/materialize.css';
+import * as energize from 'energize/sass/energize.scss';
 
 import Nav from './nav';
 import Start from './start';
