@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 
 export default React.createClass({
   onSubmit(e) {
@@ -18,7 +17,7 @@ export default React.createClass({
             <textarea className="form-control"></textarea>
           </div>
           <div className="form-group">
-            <Button bsStyle="primary" bsSize="large">Save</Button>
+            <button className="btn btn-primary btn-lg">Save</button>
           </div>
         </form>
       </div>
