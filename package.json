@@ -11,6 +11,7 @@
     "babel-loader": "^5.1.4",
     "css-loader": "^0.14.5",
     "d3": "^3.5.5",
+    "energize": "visnup/energize#dist",
     "jade": "^1.11.0",
     "koa": "^0.21.0",
     "koa-body": "^1.2.1",
@@ -25,7 +26,6 @@
     "materialize-css": "^0.96.1",
     "mongoose": "^4.0.5",
     "node-libs-browser": "^0.5.2",
-    "normalize.css": "^3.0.3",
     "react": "^0.13.3",
     "react-router": "^1.0.0-alpha2",
     "react-tap-event-plugin": "^0.1.7",
@@ -38,7 +38,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "postinstall": "webpack -p",
+    "postinstall": "if [[ $NODE_ENV == 'production' ]]; then webpack -p; fi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

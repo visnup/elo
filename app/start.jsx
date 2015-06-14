@@ -1,11 +1,12 @@
 import React from 'react';
+import { Container } from 'energize';
 
 export default React.createClass({
   render: function() {
     return (
-      <div className="container">
+      <Container>
         <h1>Start</h1>
-      </div>
+      </Container>
     );
   }
 });
