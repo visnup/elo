@@ -1,4 +1,5 @@
 import React from 'react';
+import { Nav, Navbar, CollapsibleNav, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { json } from 'd3';
 
@@ -13,23 +14,16 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div className="navbar-fixed">
-        <nav>
-          <div className="nav-wrapper container">
-            <Link to='/' className="brand-logo">elo</Link>
-            <ul className="right hide-on-med-and-down">
-              {this.state.lists.map(list =>
-                <li key={list._id}>
-                  <Link to={`/lists/${list._id}`}>{list.name}</Link>
-                </li>
-              )}
-              <li><Link to='/lists/new'>
-                <i className="mdi-content-add"></i>
-              </Link></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+      <Navbar brand="elo">
+        <CollapsibleNav>
+          <Nav navbar right>
+            {this.state.lists.map(list =>
+              <li><Link to={`/lists/${list._id}`}>{list.name}</Link></li>
+            )}
+            <li><Link to='/lists/new'><Glyphicon glyph="plus" /></Link></li>
+          </Nav>
+        </CollapsibleNav>
+      </Navbar>
     );
   }
 });

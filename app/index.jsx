@@ -2,7 +2,7 @@ import React from 'react';
 import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
-import * as materialize from 'materialize-css/bin/materialize.css';
+import * as bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import Nav from './nav';
 import Start from './start';
@@ -29,7 +29,7 @@ const NoMatch = React.createClass({
 React.render(
   <Router history={History}>
     <Route path="/" component={App}>
-      //<Route path="lists/new" component={ListForm} />
+      <Route path="lists/new" component={ListForm} />
       <Route path="lists/:id" component={List} />
       <Route path="*" component={NoMatch} />
     </Route>
