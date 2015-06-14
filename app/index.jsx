@@ -2,7 +2,8 @@ import React from 'react';
 import History from 'react-router/lib/BrowserHistory';
 import { Router, Route, Link } from 'react-router';
 
-import * as materialize from 'materialize-css/bin/materialize.css';
+import * as normalize from 'normalize.css';
+import { Styles } from 'material-ui';
 
 import Nav from './nav';
 import Start from './start';
@@ -10,6 +11,18 @@ import List from './list';
 import ListForm from './list-form';
 
 const App = React.createClass({
+  getInitialState() {
+    return { themeManager: new Styles.ThemeManager() };
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext() {
+    return { muiTheme: this.state.themeManager.getCurrentTheme() };
+  },
+
   render() {
     return (
       <div>
