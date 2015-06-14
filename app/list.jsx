@@ -22,6 +22,7 @@ export default React.createClass({
     return (
       <div className="container">
         <h1>{this.state.name}</h1>
+        {this.state.description}
       </div>
     );
   }
