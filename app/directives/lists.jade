@@ -1,0 +1,7 @@
+md-toolbar: h1.md-toolbar-tools Lists
+md-content
+  md-list
+    md-list-item( ng-repeat="list in lists" ng-click="$state.go('list', {id: list._id}); main.toggleNav('left')" )
+      .md-list-item-text
+        h2.md-headline {{list.name}}
+        p {{list.description}}

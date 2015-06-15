@@ -16,8 +16,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.jade$/, loader: 'jade' },
       { test: /\.css$/, loader: 'style!css' },
+      { test: /\.jade$/, loader: 'jade' },
       //{ test: /\.(woff2?|ttf|eot)$/, loader: 'url' },
       //{ test: /\.svg$/, loader: 'url' }
     ]
