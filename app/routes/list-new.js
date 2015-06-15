@@ -15,7 +15,7 @@ export default angular.module('routes.list-new', [
       constructor(List, $scope) {
         this.list = new List({ items: [ {}, {}, {} ] });
 
-        $scope.root.lists.push(this.list);
+        $scope.root.lists.unshift(this.list);
 
         $scope.$on('$destroy', () => {
           if (!this.list._id)

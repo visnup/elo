@@ -5,7 +5,7 @@ const List = mongoose.model('List');
 
 module.exports = function (app) {
   app.use(route.get('/lists', function *() {
-    this.body = yield List.find();
+    this.body = yield List.find().sort('-_id');
   }));
 
   app.use(route.post('/lists', function *() {
