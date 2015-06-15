@@ -3,8 +3,8 @@ md-content
   md-list
     md-list-item( ng-repeat="list in lists" ng-click="$state.go('list', {id: list._id}); main.toggleNav('left')" )
       .md-list-item-text
-        h2.md-headline {{list.name}}
-        p {{list.description}}
+        h2.md-title {{list.name}}
+        p.md-subhead {{list.description}}
       md-divider( ng-if="!$last" )
 md-button.md-fab.md-fab-bottom-left( ng-click="$state.go('listNew'); main.toggleNav('left')" )
   md-icon add

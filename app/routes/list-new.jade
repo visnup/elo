@@ -1,12 +1,15 @@
-h1.md-display-2 New List
+md-toolbar.md-whiteframe-z1: .md-toolbar-tools
+  md-button.md-icon-button( show-md hide-gt-md ng-click="main.toggleNav('left')" )
+    md-icon menu
+  h2 New List
+md-content( layout-padding )
+  form( layout="column" flex ng-submit="listNew.submit()" )
+    md-input-container
+      label Name
+      input( ng-model="listNew.list.name" )
 
-form( layout="column" ng-submit="listNew.submit()" )
-  md-input-container
-    label Name
-    input( ng-model="listNew.list.name" )
+    md-input-container
+      label Description
+      textarea( ng-model="listNew.list.description" )
 
-  md-input-container
-    label Description
-    textarea( ng-model="listNew.list.description" )
-
-  md-button.md-raised.md-primary Save
+    md-button.md-raised.md-primary Save

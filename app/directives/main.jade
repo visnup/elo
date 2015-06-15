@@ -1,6 +1,6 @@
 section( layout="row" flex )
   md-sidenav.md-sidenav-left.md-whiteframe-z2( lists md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" )
-  md-content( layout="column" flex )
+  md-content( layout="column" flex ui-view="" )
     md-toolbar.md-whiteframe-z1: .md-toolbar-tools
       md-button.md-icon-button( show-md hide-gt-md ng-click="main.toggleNav('left')" )
         md-icon menu

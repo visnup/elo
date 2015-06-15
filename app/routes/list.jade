@@ -1,2 +1,13 @@
-h1.md-display-2 {{list.list.name}}
-p {{list.list.description}}
+md-toolbar.md-whiteframe-z1: .md-toolbar-tools
+  md-button.md-icon-button( show-md hide-gt-md ng-click="main.toggleNav('left')" )
+    md-icon menu
+  h2 {{list.list.name}}
+
+  span( flex )
+
+  md-button.md-icon-button( ng-click="$state.go('listEdit', {id: list._id})" )
+    md-icon edit
+
+md-content( layout-padding )
+  div( layout="column" flex )
+    p {{list.list.description}}
