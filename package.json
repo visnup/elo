@@ -41,7 +41,8 @@
   "scripts": {
     "postinstall": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --harmony_arrow_functions server.js"
+    "start": "node --harmony_arrow_functions server.js",
+    "dev": "node-dev --harmony_arrow_functions server.js"
   },
   "author": "visnup",
   "license": "ISC",
