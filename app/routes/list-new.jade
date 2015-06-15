@@ -1,0 +1,12 @@
+h1.md-display-2 New List
+
+form( layout="column" ng-submit="listNew.submit()" )
+  md-input-container
+    label Name
+    input( ng-model="listNew.list.name" )
+
+  md-input-container
+    label Description
+    textarea( ng-model="listNew.list.description" )
+
+  md-button.md-raised.md-primary Save

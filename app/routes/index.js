@@ -3,7 +3,8 @@ import { module } from 'angular';
 export default module('routes', [
   require('angular-ui-router'),
   require('./start'),
-  require('./list')
+  require('./list-new'),
+  require('./list'),
 ])
 .config(($locationProvider) => {
   $locationProvider.html5Mode({ enabled: true, requireBase: false });

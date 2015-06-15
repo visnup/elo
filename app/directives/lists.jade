@@ -5,3 +5,5 @@ md-content
       .md-list-item-text
         h2.md-headline {{list.name}}
         p {{list.description}}
+    md-button.md-fab( ng-click="$state.go('listNew'); main.toggleNav('left')" )
+      md-icon add
