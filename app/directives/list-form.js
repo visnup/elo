@@ -2,6 +2,7 @@ import { module } from 'angular';
 import { every } from 'lodash';
 
 export default angular.module('directives.list-form', [
+  require('angular-ui-router'),
   require('../models/list')
 ])
 .directive('listForm', (List) => {
