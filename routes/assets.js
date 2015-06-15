@@ -1,7 +1,9 @@
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('../public/manifest.json').map(asset => `/${asset}`);
+  module.exports = require('../public/manifest.json')
+    .filter(asset => !asset.match(/\.map$/))
+    .map(asset => `/${asset}`);
 } else {
   const compiler = require('webpack')(require('../webpack.config.js'));
   const Server = require('webpack-dev-server');
