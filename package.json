@@ -40,7 +40,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "postinstall": "if [[ $NODE_ENV == 'production' ]]; then webpack -p; fi",
+    "postinstall": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --harmony_arrow_functions server.js"
   },
