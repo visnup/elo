@@ -1,4 +1,5 @@
 import { module } from 'angular';
+import { every } from 'lodash';
 
 export default angular.module('directives.list-form', [
   require('../models/list')
@@ -23,7 +24,6 @@ export default angular.module('directives.list-form', [
       }
 
       submit() {
-        this.list.items = filter(this.list.items, 'name');
         this.list.$save().then((list) => {
           this.$state.go('list', { id: list._id });
         });

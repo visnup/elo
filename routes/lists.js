@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const route = require('koa-route');
 const mongoose = require('mongoose');
 const List = mongoose.model('List');
@@ -10,6 +11,8 @@ module.exports = function (app) {
   app.use(route.post('/lists', function *() {
     delete this.request.body.id;
     delete this.request.body._id;
+
+    this.request.body.items = _.filter(this.request.body.items, 'name');
 
     try {
       this.body = yield new List(this.request.body).save();

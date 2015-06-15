@@ -1,5 +1,4 @@
 import { module } from 'angular';
-import { every, filter } from 'lodash';
 
 export default angular.module('routes.list-new', [
   require('angular-ui-router'),
