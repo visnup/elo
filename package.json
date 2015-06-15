@@ -41,8 +41,17 @@
   },
   "scripts": {
     "postinstall": "if [[ $NODE_ENV == 'production' ]]; then webpack -p; fi",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony_arrow_functions server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "visnup",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visnup/elo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/visnup/elo/issues"
+  },
+  "homepage": "https://github.com/visnup/elo"
 }
