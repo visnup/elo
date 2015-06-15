@@ -1,0 +1,21 @@
+section( layout="row" flex )
+  md-sidenav.md-sidenav-left.md-whiteframe-z2( md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" )
+
+    md-toolbar: h1.md-toolbar-tools Lists
+    md-content
+      md-list
+        md-list-item( ng-repeat="list in root.lists" ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
+          .md-list-item-text
+            h2.md-title {{list.name}}
+            p.md-subhead {{list.description}}
+          md-divider( ng-if="!$last" )
+    md-button.md-fab.md-fab-bottom-right( ng-click="$state.go('root.listNew'); root.toggleNav('left')" )
+      md-icon add
+
+  md-content( layout="column" flex ui-view="" )
+    md-toolbar.md-whiteframe-z1: .md-toolbar-tools
+      md-button.md-icon-button( show-md hide-gt-md ng-click="root.toggleNav('left')" )
+        md-icon menu
+      h2 elo
+    md-content( layout-padding )
+      h1 root

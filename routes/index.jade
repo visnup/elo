@@ -6,6 +6,6 @@ html
     link( rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700|Material+Icons" )
     style .material-icons { vertical-align: top }
   body( ng-app="elo" ng-strict-di layout="column" )
-    main( layout="column" flex )
+    main( layout="column" flex ui-view="" )
     each asset in assets
       script( src=asset async )

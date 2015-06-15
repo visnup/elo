@@ -3,5 +3,5 @@ import css from 'angular-material/angular-material.css';
 
 module('elo', [
   require('angular-material'),
-  require('./directives/main')
+  require('./routes')
 ]);

@@ -2,7 +2,7 @@ import { module } from 'angular';
 
 export default angular.module('routes', [
   require('angular-ui-router'),
-  require('./start'),
+  require('./root'),
   require('./list-new'),
   require('./list'),
   require('./list-edit'),
@@ -12,6 +12,10 @@ export default angular.module('routes', [
 })
 .run(($rootScope, $state) => {
   $rootScope.$state = $state;
+
+  $rootScope.$on('$stateChangeSuccess', (e, to, toParams, from, fromParams) => {
+    console.log('state', from.name, '>', to.name);
+  });
 
   $rootScope.$on('$stateChangeError', (e, to, toParams, from, fromParams, error) => {
     throw error;

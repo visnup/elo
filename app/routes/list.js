@@ -5,8 +5,8 @@ export default angular.module('routes.list', [
   require('../models/list')
 ])
 .config(($stateProvider) => {
-  $stateProvider.state('list', {
-    url: '/lists/:id',
+  $stateProvider.state('root.list', {
+    url: 'lists/:id',
     template: require('./list.jade'),
     resolve: {
       list($stateParams, List) {

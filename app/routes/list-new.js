@@ -6,8 +6,8 @@ export default angular.module('routes.list-new', [
   require('../directives/list-form')
 ])
 .config(($stateProvider) => {
-  $stateProvider.state('listNew', {
-    url: '/lists/new',
+  $stateProvider.state('root.listNew', {
+    url: 'lists/new',
     template: require('./list-new.jade'),
     controllerAs: 'listNew',
     controller: class {
