@@ -7,6 +7,7 @@ section( layout="row" flex )
         md-list-item( ng-repeat="list in root.lists" ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
           .md-list-item-text
             h2.md-title {{list.name || 'New List'}}
+            small.md-secondary {{list.items.length}}
             p.md-subhead( ng-show="list.description" ) {{list.description}}
           md-divider( ng-if="!$last" )
     md-button.md-fab.md-fab-bottom-right( ng-click="$state.go('root.listNew'); root.toggleNav('left')" )
