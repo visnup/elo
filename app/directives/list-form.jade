@@ -1,0 +1,16 @@
+form( layout="column" ng-submit="listForm.submit()" )
+  md-input-container
+    label Name
+    input( ng-model="listForm.list.name" )
+
+  md-input-container
+    label Description
+    textarea( ng-model="listForm.list.description" )
+
+  h3.md-subheader Items
+  md-input-container( ng-repeat="item in listForm.list.items" )
+    label Item {{$index + 1}}
+    input( ng-model="item.name" )
+
+  div( layout="row" )
+    md-button.md-raised.md-primary( flex-sm ) Save
