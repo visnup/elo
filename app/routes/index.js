@@ -1,6 +1,6 @@
 import { module } from 'angular';
 
-export default module('routes', [
+export default angular.module('routes', [
   require('angular-ui-router'),
   require('./start'),
   require('./list-new'),

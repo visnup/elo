@@ -1,8 +1,8 @@
 import { module } from 'angular';
 
-export default module('routes.list-new', [
+export default angular.module('routes.list-new', [
   require('angular-ui-router'),
-  require('../models')
+  require('../models/list')
 ])
 .config(($stateProvider) => {
   $stateProvider.state('listNew', {

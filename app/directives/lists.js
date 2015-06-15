@@ -1,6 +1,6 @@
 import { module } from 'angular';
 
-export default module('directives.lists', [
+export default angular.module('directives.lists', [
   require('../models/list')
 ])
 .directive('lists', (List) => {
@@ -8,4 +8,5 @@ export default module('directives.lists', [
     template: require('./lists.jade'),
     link(scope) { scope.lists = List.query() }
   };
-}).name;
+})
+.name;

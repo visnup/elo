@@ -1,6 +1,6 @@
 import { module } from 'angular';
 
-export default module('routes.start', [
+export default angular.module('routes.start', [
   require('angular-ui-router')
 ])
 .config(($stateProvider) => {

@@ -1,5 +1,4 @@
 const path = require('path');
-const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.js$/, loader: 'ng-annotate!babel', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.jade$/, loader: 'jade' },
       //{ test: /\.(woff2?|ttf|eot)$/, loader: 'url' },
@@ -35,8 +34,7 @@ module.exports = {
           const manifest = path.join(__dirname, 'public', 'manifest.json');
           require('fs').writeFileSync(manifest, JSON.stringify(assets));
         });
-    },
-    new ngAnnotatePlugin({ add: true })
+    }
   ]
 
 };

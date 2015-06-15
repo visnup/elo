@@ -1,6 +1,6 @@
 import { module } from 'angular';
 
-export default module('directives.main', [
+export default angular.module('directives.main', [
   require('./lists'),
   require('../routes')
 ])
