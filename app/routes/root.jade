@@ -1,7 +1,10 @@
 section( layout="row" flex )
   md-sidenav.md-sidenav-left.md-whiteframe-z2( md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" )
 
-    md-toolbar: h1.md-toolbar-tools Lists
+    md-toolbar.md-whiteframe-z1: .md-toolbar-tools
+      md-button.md-icon-button( show-md hide-gt-md ng-click="root.toggleNav('left')" )
+        md-icon close
+      h2 Lists
     md-content
       md-list
         md-list-item( ng-repeat="list in root.lists" ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
