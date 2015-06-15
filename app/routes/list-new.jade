@@ -12,4 +12,9 @@ md-content( layout-padding )
       label Description
       textarea( ng-model="listNew.list.description" )
 
+    h3.md-subheader Items
+    md-input-container( ng-repeat="item in listNew.list.items" )
+      label Item {{$index + 1}}
+      input( ng-model="item.name" )
+
     md-button.md-raised.md-primary Save

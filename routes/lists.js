@@ -10,7 +10,14 @@ module.exports = function (app) {
   app.use(route.post('/lists', function *() {
     delete this.request.body.id;
     delete this.request.body._id;
-    this.body = yield new List(this.request.body).save();
+
+    try {
+      this.body = yield new List(this.request.body).save();
+    } catch (err) {
+      this.status = 422;
+      this.body = err;
+      this.app.emit('error', err, this);
+    }
   }));
 
   app.use(route.get('/lists/:id', function *(id) {

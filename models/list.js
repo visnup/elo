@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const Item = mongoose.model('Item', {
-  name: String,
+const ItemSchema = mongoose.Schema({
+  name: { type: String, required: true },
   description: String,
   score: Number
 });
 
-const List = mongoose.model('List', {
-  name: String,
+const ListSchema = module.exports = mongoose.Schema({
+  name: { type: String, required: true },
   description: String,
-  items: [ Item ]
+  items: [ ItemSchema ]
 });
 
-module.export = List;
+mongoose.model('List', ListSchema);
