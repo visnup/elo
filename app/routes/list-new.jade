@@ -3,18 +3,4 @@ md-toolbar.md-whiteframe-z1: .md-toolbar-tools
     md-icon menu
   h2 New List
 md-content( layout-padding )
-  form( layout="column" flex ng-submit="listNew.submit()" )
-    md-input-container
-      label Name
-      input( ng-model="listNew.list.name" )
-
-    md-input-container
-      label Description
-      textarea( ng-model="listNew.list.description" )
-
-    h3.md-subheader Items
-    md-input-container( ng-repeat="item in listNew.list.items" )
-      label Item {{$index + 1}}
-      input( ng-model="item.name" )
-
-    md-button.md-raised.md-primary Save
+  list-form( list="listNew.list" layout="column" flex )
