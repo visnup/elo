@@ -6,7 +6,7 @@ export default angular.module('routes.list-edit', [
   require('../directives/list-form')
 ])
 .config(($stateProvider) => {
-  $stateProvider.state('list.edit', {
+  $stateProvider.state('root.list.edit', {
     url: '/edit',
     template: require('./list-edit.jade'),
     controllerAs: 'listEdit',
