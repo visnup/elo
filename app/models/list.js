@@ -1,7 +1,7 @@
 import { module } from 'angular';
 
 export default angular.module('models.List', [
-  require('angular-resource')
+  require('./resource')
 ])
-.factory('List', $resource => $resource('/lists/:id', { id: '@_id' }))
+.factory('List', resource => resource('/lists/:id', { id: '@_id' }))
 .name;

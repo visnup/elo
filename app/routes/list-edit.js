@@ -12,7 +12,11 @@ export default angular.module('routes.list-edit', [
     controllerAs: 'listEdit',
     controller: class {
       constructor(list) {
-        this.list = this;
+        this.list = list;
+      }
+
+      submit() {
+        console.log('ooh');
       }
     }
   });
