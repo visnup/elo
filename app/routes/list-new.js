@@ -1,4 +1,5 @@
 import { module } from 'angular';
+import { pull } from 'lodash';
 
 export default angular.module('routes.list-new', [
   require('angular-ui-router'),
@@ -11,8 +12,15 @@ export default angular.module('routes.list-new', [
     template: require('./list-new.jade'),
     controllerAs: 'listNew',
     controller: class {
-      constructor(List) {
+      constructor(List, $scope) {
         this.list = new List({ items: [ {}, {}, {} ] });
+
+        $scope.root.lists.push(this.list);
+
+        $scope.$on('$destroy', () => {
+          if (!this.list._id)
+            pull($scope.root.lists, this.list);
+        });
       }
     }
   });
