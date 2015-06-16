@@ -12,18 +12,21 @@ export default angular.module('routes.list-new', [
     template: require('./list-new.jade'),
     controllerAs: 'listNew',
     controller: class {
-      constructor(List, $scope) {
+      constructor(List, $scope, $state) {
         this.list = new List({ items: [ {}, {}, {} ] });
+        this.lists = $scope.root.lists;
+        this.$state = $state;
 
-        $scope.root.lists.unshift(this.list);
+        this.lists.unshift(this.list);
 
         $scope.$on('$destroy', () => {
           if (!this.list._id)
-            pull($scope.root.lists, this.list);
+            pull(this.lists, this.list);
         });
       }
 
       submit() {
+        this.$state.go('^.list', { id: this.list._id });
       }
     }
   });

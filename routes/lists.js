@@ -15,6 +15,7 @@ module.exports = function (app) {
     delete this.request.body._id;
     this.request.body.items = _.filter(this.request.body.items, 'name');
 
+    this.status = 201;
     this.body = yield new List(this.request.body).save();
   }));
 

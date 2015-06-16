@@ -1,8 +1,8 @@
 import { module } from 'angular';
+import { findIndex } from 'lodash';
 
 export default angular.module('routes.list-edit', [
   require('angular-ui-router'),
-  require('../models/list'),
   require('../directives/list-form')
 ])
 .config(($stateProvider) => {
@@ -11,12 +11,14 @@ export default angular.module('routes.list-edit', [
     template: require('./list-edit.jade'),
     controllerAs: 'listEdit',
     controller: class {
-      constructor(list, $state) {
+      constructor(list, $scope, $state) {
         this.list = list;
+        this.lists = $scope.root.lists;
         this.$state = $state;
       }
 
       submit() {
+        this.lists[findIndex(this.lists, { _id: this.list._id })] = this.list;
         this.$state.go('^');
       }
     }

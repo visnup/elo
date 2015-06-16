@@ -7,7 +7,7 @@ section( layout="row" flex )
       h2 Lists
     md-content
       md-list
-        md-list-item( ng-repeat="list in root.lists" ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
+        md-list-item( ng-repeat="list in root.lists" ng-disabled='!list._id' ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
           .md-list-item-text
             h2.md-title {{list.name || 'New List'}}
             small.md-secondary {{list.items.length}}

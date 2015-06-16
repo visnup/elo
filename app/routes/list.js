@@ -10,7 +10,8 @@ export default angular.module('routes.list', [
     template: require('./list.jade'),
     resolve: {
       list($stateParams, List) {
-        return List.get({ id: $stateParams.id }).$promise;
+        if ($stateParams.id)
+          return List.get({ id: $stateParams.id }).$promise;
       }
     },
     controllerAs: 'list',

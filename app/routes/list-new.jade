@@ -3,4 +3,4 @@ md-toolbar.md-whiteframe-z1: .md-toolbar-tools
     md-icon menu
   h2 New List
 md-content( layout-padding )
-  list-form( list="listNew.list" layout="column" flex )
+  list-form( list="listNew.list" on-submit="listNew.submit()" layout="column" flex )
