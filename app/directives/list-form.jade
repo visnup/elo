@@ -4,7 +4,7 @@ form( layout="column" ng-submit="listForm.submit()" )
     input( ng-model="listForm.list.name" )
 
   md-input-container
-    label Description
+    label Question
     textarea( ng-model="listForm.list.description" )
 
   md-content( layout="row" ng-repeat="item in listForm.list.items" )
