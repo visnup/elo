@@ -11,6 +11,6 @@ md-toolbar.md-whiteframe-z1: .md-toolbar-tools
 div( ui-view="" )
   md-content( layout-padding )
     p( flex ng-show="list.list.description" ) {{list.list.description}}
-  md-list
-    md-list-item( ng-repeat="item in list.list.items" )
-      p {{item.name}}
+    md-button.md-raised.md-primary( ng-click="" ) Start comparing
+  md-list: md-list-item( ng-repeat="item in list.list.items" )
+    p {{item.name}}
