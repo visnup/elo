@@ -1,11 +1,11 @@
 import { module } from 'angular';
 
-export default angular.module('routes.list-edit', [
+export default angular.module('routes.list-compare', [
   require('angular-ui-router')
 ])
 .config(($stateProvider) => {
   $stateProvider.state('root.list.compare', {
-    url: '/edit',
+    url: '/compare',
     template: require('./list-compare.jade'),
     controllerAs: 'listCompare',
     controller: class {

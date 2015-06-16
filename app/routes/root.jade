@@ -13,7 +13,7 @@ section( layout="row" flex )
             small.md-secondary {{list.items.length}}
             p.md-subhead( ng-show="list.description" ) {{list.description}}
           md-divider( ng-if="!$last" )
-    md-button.md-fab.md-fab-bottom-right( ng-click="$state.go('root.listNew'); root.toggleNav('left')" )
+    md-button.md-fab.md-fab-bottom-right( ui-sref=".listNew" ng-click="root.toggleNav('left')" )
       md-icon add
 
   md-content( layout="column" flex ui-view="" )
