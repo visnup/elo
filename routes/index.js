@@ -5,6 +5,18 @@ module.exports = function(app) {
   app.use(require('koa-views')({ default: 'jade' }));
 
   app.use(function *(next) {
+    try {
+      yield next;
+    } catch (err) {
+      if (err.name !== 'ValidationError')
+        throw err;
+      this.status = 422;
+      this.body = err;
+      this.app.emit('error', err, this);
+    }
+  });
+
+  app.use(function *(next) {
     switch (this.accepts('json', 'html')) {
       case 'json':
         yield next;

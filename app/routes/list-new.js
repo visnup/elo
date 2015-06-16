@@ -22,6 +22,9 @@ export default angular.module('routes.list-new', [
             pull($scope.root.lists, this.list);
         });
       }
+
+      submit() {
+      }
     }
   });
 })

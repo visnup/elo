@@ -6,8 +6,8 @@ export default angular.module('models.resource', [
 .factory('resource', ($resource) => {
   return (url, params, methods) => {
     const defaults = {
-      update: { method: 'put', isArray: false },
-      create: { method: 'post' }
+      create: { method: 'POST' },
+      update: { method: 'PUT' }
     };
 
     methods = angular.extend(defaults, methods);

@@ -11,12 +11,13 @@ export default angular.module('routes.list-edit', [
     template: require('./list-edit.jade'),
     controllerAs: 'listEdit',
     controller: class {
-      constructor(list) {
+      constructor(list, $state) {
         this.list = list;
+        this.$state = $state;
       }
 
       submit() {
-        console.log('ooh');
+        this.$state.go('^');
       }
     }
   });
