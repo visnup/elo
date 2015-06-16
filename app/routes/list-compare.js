@@ -22,7 +22,7 @@ export default angular.module('routes.list-compare', [
         this.Comparison.save({
           list: this.list._id,
           items: pluck(this.items, '_id'),
-          winner: item._id
+          winner: item && item._id
         });
         this.items = sample(this.list.items, 2);
       }
