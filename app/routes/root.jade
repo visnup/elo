@@ -10,9 +10,8 @@ section( layout="row" flex )
         md-list-item.md-3-line( ng-repeat="list in root.lists" ng-disabled='!list._id' ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
           .md-list-item-text
             h3 {{list.name || 'New List'}}
-            .md-body-1( marked="list.description" )
+            .md-body-1( marked="list.description || '*No description*'" )
             small.md-secondary {{list.items.length}}
-          md-divider( ng-if="!$last" )
     md-button.md-fab.md-fab-bottom-right( ui-sref=".listNew" ng-click="root.toggleNav('left')" )
       md-icon add
 

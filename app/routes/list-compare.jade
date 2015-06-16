@@ -1,8 +1,7 @@
-md-content( layout-padding )
-  .md-body-1( flex marked="listCompare.list.description" )
+md-content( layout-padding style="text-align: center" )
+  .md-headline( marked="listCompare.list.description" flex )
 
-md-content( layout-padding layout="row" flex )
-  md-card( flex ): md-card-content
-    h1.md-display-3 one
-  md-card( flex ): md-card-content
-    h1.md-display-3 two
+md-content( layout-padding layout="row" layout-sm="column" flex )
+  md-card( ng-repeat="item in listCompare.items" ng-click="listCompare.choose(item)" flex ): md-card-content
+    h1.md-display-3 {{item.name}}
+    .md-subhead( marked="item.description" )

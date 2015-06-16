@@ -7,10 +7,13 @@ form( layout="column" ng-submit="listForm.submit()" )
     label Description
     textarea( ng-model="listForm.list.description" )
 
-  h3.md-subheader Items
-  md-input-container( ng-repeat="item in listForm.list.items" )
-    label Item {{$index + 1}}
-    input( ng-model="item.name" )
+  md-content( layout="row" ng-repeat="item in listForm.list.items" )
+    md-input-container( flex="33" )
+      label Item {{$index + 1}}
+      input( ng-model="item.name" )
+    md-input-container( flex="66" )
+      label Description
+      textarea( ng-model="item.description" )
 
   div( layout="row" )
     md-button.md-raised.md-primary( flex-sm ) Save

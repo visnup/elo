@@ -27,12 +27,12 @@ export default angular.module('routes.list', [
         this.$mdToast = $mdToast;
       }
 
-      confirmDelete(e) {
+      confirmDelete(event) {
         const confirm = this.$mdDialog.confirm()
           .title(`Delete ${this.list.name}?`)
           .ok('Delete')
           .cancel('Cancel')
-          .targetEvent(e);
+          .targetEvent(event);
         this.$mdDialog.show(confirm).then(() => this.delete());
       }
 

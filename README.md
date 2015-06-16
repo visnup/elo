@@ -30,8 +30,10 @@ elo rank any list
     - lose-id
     - created-at
 
-- es6
-- webpack
-- react? angular 2?
+# todo
+
+- sidenav list enter/exit animations
+- comparison
+- rank order visualization
 - html-webpack-plugin
 - slack
