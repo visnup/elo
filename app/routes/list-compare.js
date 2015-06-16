@@ -1,9 +1,10 @@
 import { module } from 'angular';
-import { sample } from 'lodash';
+import { sample, pluck } from 'lodash';
 
 export default angular.module('routes.list-compare', [
   require('angular-ui-router'),
-  require('angular-marked')
+  require('angular-marked'),
+  require('../models/comparison')
 ])
 .config(($stateProvider) => {
   $stateProvider.state('root.list.compare', {
@@ -11,14 +12,18 @@ export default angular.module('routes.list-compare', [
     template: require('./list-compare.jade'),
     controllerAs: 'listCompare',
     controller: class {
-      constructor(list, $state) {
+      constructor(list, Comparison) {
         this.list = list;
         this.items = sample(this.list.items, 2);
-        this.$state = $state;
+        this.Comparison = Comparison;
       }
 
       choose(item) {
-        console.log(item);
+        this.Comparison.save({
+          list: this.list._id,
+          items: pluck(this.items, '_id'),
+          winner: item._id
+        });
         this.items = sample(this.list.items, 2);
       }
     }

@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const route = require('koa-route');
-const mongoose = require('mongoose');
-const List = mongoose.model('List');
+const List = require('mongoose').model('List');
 
 module.exports = function (app) {
   // GET /lists
@@ -16,7 +15,7 @@ module.exports = function (app) {
     this.request.body.items = _.filter(this.request.body.items, 'name');
 
     this.status = 201;
-    this.body = yield new List(this.request.body).save();
+    this.body = yield List.create(this.request.body);
   }));
 
   // GET /lists/:id
