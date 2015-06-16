@@ -11,9 +11,9 @@ export default angular.module('routes.list-edit', [
     template: require('./list-edit.jade'),
     controllerAs: 'listEdit',
     controller: class {
-      constructor(list, $scope, $state) {
+      constructor(list, lists, $state) {
         this.list = list;
-        this.lists = $scope.root.lists;
+        this.lists = lists;
         this.$state = $state;
       }
 

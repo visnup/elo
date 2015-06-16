@@ -26,12 +26,12 @@ export default angular.module('directives.list-form', [
           this.items.push({});
       }
 
-      submit(e) {
-        $mdToast.showSimple('Saving');
+      submit() {
+        $mdToast.showSimple('Saving…');
 
         this.list.$save().then((response) => {
-          this.onSubmit(e, response);
-          $mdToast.showSimple('Saved');
+          this.onSubmit();
+          $mdToast.updateContent('Saved');
         }, (response) => {
           $mdToast.showSimple(`Error: ${response.data.message || response.data}`);
         });

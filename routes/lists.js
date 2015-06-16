@@ -5,12 +5,12 @@ const List = mongoose.model('List');
 
 module.exports = function (app) {
   // GET /lists
-  app.use(route.get('/lists', function *index() {
+  app.use(route.get('/lists', function *() {
     this.body = yield List.find().sort('-_id');
   }));
 
   // POST /lists
-  app.use(route.post('/lists', function *create() {
+  app.use(route.post('/lists', function *() {
     delete this.request.body.id;
     delete this.request.body._id;
     this.request.body.items = _.filter(this.request.body.items, 'name');
@@ -20,13 +20,13 @@ module.exports = function (app) {
   }));
 
   // GET /lists/:id
-  app.use(route.get('/lists/:id', function *show(id) {
+  app.use(route.get('/lists/:id', function *(id) {
     this.body = yield List.findById(id);
     if (!this.body) this.throw(404);
   }));
 
   // PUT /lists/:id
-  app.use(route.put('/lists/:id', function *update(id) {
+  app.use(route.put('/lists/:id', function *(id) {
     const list = yield List.findById(id);
     if (!list) this.throw(404);
 
@@ -40,5 +40,12 @@ module.exports = function (app) {
     });
 
     this.body = yield list.save();
+  }));
+
+  // DELETE /lists/:id
+  app.use(route.delete('/lists/:id', function *(id) {
+    const list = yield List.findByIdAndRemove(id);
+    if (!list) this.throw(404);
+    this.status = 204;
   }));
 };

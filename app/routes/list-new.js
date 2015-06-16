@@ -12,9 +12,9 @@ export default angular.module('routes.list-new', [
     template: require('./list-new.jade'),
     controllerAs: 'listNew',
     controller: class {
-      constructor(List, $scope, $state) {
+      constructor(List, lists, $scope, $state) {
         this.list = new List({ items: [ {}, {}, {} ] });
-        this.lists = $scope.root.lists;
+        this.lists = lists;
         this.$state = $state;
 
         this.lists.unshift(this.list);

@@ -1,4 +1,5 @@
 import { module } from 'angular';
+import { remove } from 'lodash';
 
 export default angular.module('routes.list', [
   require('angular-ui-router'),
@@ -17,8 +18,33 @@ export default angular.module('routes.list', [
     },
     controllerAs: 'list',
     controller: class {
-      constructor(list) {
+      constructor(list, lists, $state, $mdDialog, $mdToast) {
         this.list = list;
+        this.lists = lists;
+
+        this.$state = $state;
+        this.$mdDialog = $mdDialog;
+        this.$mdToast = $mdToast;
+      }
+
+      confirmDelete(e) {
+        const confirm = this.$mdDialog.confirm()
+          .title(`Delete ${this.list.name}?`)
+          .ok('Delete')
+          .cancel('Cancel')
+          .targetEvent(e);
+        this.$mdDialog.show(confirm).then(() => this.delete());
+      }
+
+      delete() {
+        this.$mdToast.showSimple('Deleting…');
+        this.list.$delete().then(() => {
+          remove(this.lists, { _id: this.list._id });
+          this.$state.go('root');
+          this.$mdToast.updateContent('Deleted');
+        }, (response) => {
+          this.$mdToast.showSimple(`Error: ${response.data.message || response.data}`);
+        });
       }
     }
   });
