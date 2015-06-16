@@ -2,6 +2,7 @@ import { module } from 'angular';
 
 export default angular.module('routes.list', [
   require('angular-ui-router'),
+  require('angular-marked'),
   require('../models/list')
 ])
 .config(($stateProvider) => {

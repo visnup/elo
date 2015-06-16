@@ -7,11 +7,11 @@ section( layout="row" flex )
       h2 Lists
     md-content
       md-list
-        md-list-item( ng-repeat="list in root.lists" ng-disabled='!list._id' ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
+        md-list-item.md-3-line( ng-repeat="list in root.lists" ng-disabled='!list._id' ng-click="$state.go('root.list', {id: list._id}); root.toggleNav('left')" )
           .md-list-item-text
-            h2.md-title {{list.name || 'New List'}}
+            h3 {{list.name || 'New List'}}
+            .md-body-1( marked="list.description" )
             small.md-secondary {{list.items.length}}
-            p.md-subhead( ng-show="list.description" ) {{list.description}}
           md-divider( ng-if="!$last" )
     md-button.md-fab.md-fab-bottom-right( ui-sref=".listNew" ng-click="root.toggleNav('left')" )
       md-icon add

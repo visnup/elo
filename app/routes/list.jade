@@ -8,9 +8,9 @@ md-toolbar.md-whiteframe-z1: .md-toolbar-tools
   md-button.md-icon-button( ui-sref=".edit" )
     md-icon edit
 
-div( ui-view="" )
+div( ui-view="" layout="column" flex )
   md-content( layout-padding )
-    p( flex ng-show="list.list.description" ) {{list.list.description}}
+    .md-body-1( flex marked="list.list.description" )
     md-button.md-raised.md-primary( ui-sref=".compare" ) Start comparing
   md-list: md-list-item( ng-repeat="item in list.list.items" )
     p {{item.name}}

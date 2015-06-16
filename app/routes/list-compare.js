@@ -1,7 +1,8 @@
 import { module } from 'angular';
 
 export default angular.module('routes.list-compare', [
-  require('angular-ui-router')
+  require('angular-ui-router'),
+  require('angular-marked')
 ])
 .config(($stateProvider) => {
   $stateProvider.state('root.list.compare', {
