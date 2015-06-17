@@ -1,0 +1,8 @@
+md-content( layout-padding style="text-align: center" )
+  .md-headline( marked="listResults.list.description" flex )
+
+md-list
+  md-list-item.md-2-line( ng-repeat="item in listResults.list.items | orderBy:'-rating'" )
+    .md-list-item-text
+      h3 {{item.name}}
+      h4 {{item.rating}}

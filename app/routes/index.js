@@ -7,6 +7,7 @@ export default angular.module('routes', [
   require('./list'),
   require('./list-edit'),
   require('./list-compare'),
+  require('./list-results'),
 ])
 .config(($locationProvider) => {
   $locationProvider.html5Mode({ enabled: true, requireBase: false });
