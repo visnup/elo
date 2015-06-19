@@ -34,6 +34,7 @@
     "ng-annotate-loader": "0.0.4",
     "node-libs-browser": "^0.5.2",
     "style-loader": "^0.12.3",
+    "stylus-loader": "^1.2.1",
     "webpack": "^1.9.10"
   },
   "devDependencies": {
