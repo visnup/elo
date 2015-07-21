@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "elo rank any list",
   "engines": {
-    "iojs": "2.2.x"
+    "iojs": "2.4.x"
   },
   "main": "server.js",
   "dependencies": {
