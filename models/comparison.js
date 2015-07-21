@@ -29,7 +29,6 @@ ComparisonSchema.post('save', function(comparison) {
       if ('actual' in item) {
         const rating = item.rating;
         item.rating = item.rating + 32 * (item.actual - item.expected);
-        console.log(item.name, rating, item.rating, item.expected, item.actual);
       }
     });
 
