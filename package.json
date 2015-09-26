@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "elo rank any list",
   "engines": {
-    "node": "4.x.x"
+    "node": "4.1.x",
+    "npm": "3.3.x"
   },
   "main": "server.js",
   "dependencies": {
