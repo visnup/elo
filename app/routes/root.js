@@ -1,5 +1,4 @@
 import { module } from 'angular';
-import css from './root.styl';
 
 export default angular.module('routes.root', [
   require('angular-ui-router'),
