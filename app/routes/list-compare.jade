@@ -4,6 +4,6 @@ md-content( layout-padding style="text-align: center" )
 md-content( layout-padding layout-align="center" layout="row" layout-sm="column" flex )
   md-card( ng-repeat="item in listCompare.items" ng-click="listCompare.choose(item)" flex flex-order="{{$index * 2}}" )
     md-card-content
-      h1.md-display-3 {{item.name}}
+      h1.md-display-1 {{item.name}}
       .md-subhead( marked="item.description" )
   md-button.md-fab.md-primary( flex-order="1" style="margin: 0 -28px; align-self: center;" ng-click="listCompare.choose(null)" ) or
