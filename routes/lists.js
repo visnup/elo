@@ -20,6 +20,7 @@ module.exports = function (app) {
 
   // GET /lists/:id
   app.use(route.get('/lists/:id', function *(id) {
+    this.set('Access-Control-Allow-Origin', 'https://visnup.static.observableusercontent.com');
     this.body = yield List.findById(id);
     if (!this.body) this.throw(404);
   }));
