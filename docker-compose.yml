@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+    environment:
+      - ENV=development
+      - MONGOLAB_URI=mongodb://db/local
+    init: true
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:
