@@ -29,7 +29,7 @@
     "koa-route": "^2.4.2",
     "koa-static-cache": "^3.1.2",
     "koa-views": "^3.1.0",
-    "lodash": "^3.10.0",
+    "lodash": "^4.17.19",
     "mongoose": "^4.0.8",
     "mongoose-timestamp": "^0.4.0",
     "ng-annotate-loader": "0.0.6",
